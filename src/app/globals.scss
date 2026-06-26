@@ -1,0 +1,18 @@
+@use "../../src/styles/abstracts/_variables" as v;
+@use "../../src/styles/abstracts/_mixins" as m;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: v.$font-body;
+  background: v.$color-gold-light;
+  color: v.$color-black;
+}
+
+h1, h2, h3 {
+  font-family: v.$font-heading;
+}

@@ -1,0 +1,73 @@
+@use "../../styles/abstracts/variables" as v;
+
+.hero {
+  position: relative;
+  min-height: 78vh;
+  background-image: url("/images/hero.jpg"); // swap for your actual hero photo
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.45); // darkens the image so white text is always readable
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: v.$color-white;
+  max-width: 700px;
+  padding: 0 v.$spacing-md;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: v.$spacing-sm;
+  }
+
+  p {
+    font-family: v.$font-body;
+    font-size: 1rem;
+    color: v.$color-gray-light;
+    margin-bottom: v.$spacing-md;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: v.$spacing-sm;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primaryBtn {
+  background: v.$color-gold;
+  color: v.$color-black;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  font-family: v.$font-body;
+  cursor: pointer;
+
+  &:hover {
+    background: v.$color-gold-light;
+  }
+}
+
+.secondaryBtn {
+  background: transparent;
+  color: v.$color-white;
+  border: 1px solid v.$color-white;
+  padding: 0.8rem 1.8rem;
+  font-family: v.$font-body;
+  cursor: pointer;
+
+  &:hover {
+    background: v.$color-white;
+    color: v.$color-black;
+  }
+}

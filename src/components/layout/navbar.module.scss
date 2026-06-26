@@ -1,0 +1,94 @@
+@use "../../styles/abstracts/variables" as v;
+
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: v.$spacing-sm v.$spacing-lg;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px; // gives the blur fade something to fade across — adjust to taste
+  z-index: 50;
+}
+
+// The actual blurred layer, faded top-to-bottom via mask-image
+.blurLayer {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
+
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-self: start;
+  position: relative;
+  z-index: 1;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: v.$spacing-md;
+  justify-self: center;
+  position: relative;
+  z-index: 1;
+
+  a {
+    font-family: v.$font-body;
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    transition: color v.$transition-base;
+  }
+}
+
+.bookBtn {
+  justify-self: end;
+  background: transparent;
+  font-family: v.$font-body;
+  font-size: 0.85rem;
+  padding: 0.6rem 1.4rem;
+  cursor: pointer;
+  transition: background v.$transition-base, color v.$transition-base;
+  position: relative;
+  z-index: 1;
+}
+
+// Theme: sitting on a DARK hero image
+.onDark {
+  .links a {
+    color: v.$color-white;
+    &:hover { color: v.$color-gold; }
+  }
+  .bookBtn {
+    border: 1px solid v.$color-white;
+    color: v.$color-white;
+    &:hover { background: v.$color-white; color: v.$color-black; }
+  }
+}
+
+// Theme: sitting on a LIGHT hero image
+.onLight {
+  .links a {
+    color: v.$color-black;
+    &:hover { color: v.$color-gold; }
+  }
+  .bookBtn {
+    border: 1px solid v.$color-black;
+    color: v.$color-black;
+    &:hover { background: v.$color-black; color: v.$color-white; }
+  }
+}
+
+@media (max-width: v.$breakpoint-mobile) {
+  .navbar { grid-template-columns: 1fr auto; }
+  .links { display: none; }
+}
