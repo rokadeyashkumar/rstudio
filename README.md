@@ -34,3 +34,85 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+
+
+
+
+rstudio/
+├── public/
+│   ├── images/
+│   ├── icons/
+│   └── videos/
+│
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx
+│   │   ├── globals.scss
+│   │   │
+│   │   ├── (website)/
+│   │   │   ├── layout.tsx
+│   │   │   ├── page.tsx
+│   │   │   ├── about/page.tsx
+│   │   │   ├── services/page.tsx
+│   │   │   ├── portfolio/page.tsx
+│   │   │   ├── events/page.tsx
+│   │   │   └── contact/page.tsx
+│   │   │
+│   │   ├── admin/
+│   │   │   ├── layout.tsx
+│   │   │   ├── page.tsx
+│   │   │   ├── content/page.tsx
+│   │   │   ├── clients/page.tsx
+│   │   │   ├── bookings/page.tsx
+│   │   │   ├── events/page.tsx
+│   │   │   ├── portfolio/page.tsx
+│   │   │   └── settings/page.tsx
+│   │   │
+│   │   ├── gallery/
+│   │   │   └── [slug]/page.tsx
+│   │   │
+│   │   └── api/
+│   │
+│   ├── components/
+│   │   ├── ui/
+│   │   │   ├── Button.tsx
+│   │   │   ├── Button.module.scss
+│   │   │   ├── Input.tsx
+│   │   │   ├── Input.module.scss
+│   │   │   ├── Card.tsx
+│   │   │   └── Card.module.scss
+│   │   │
+│   │   ├── layout/
+│   │   │   ├── Navbar.tsx
+│   │   │   ├── Navbar.module.scss
+│   │   │   ├── Footer.tsx
+│   │   │   └── Footer.module.scss
+│   │   │
+│   │   └── sections/
+│   │       ├── Hero.tsx
+│   │       ├── Hero.module.scss
+│   │       ├── Testimonials.tsx
+│   │       └── Testimonials.module.scss
+│   │
+│   ├── lib/
+│   │   ├── db.ts
+│   │   ├── auth.ts
+│   │   ├── email.ts
+│   │   ├── storage.ts
+│   │   └── qr.ts
+│   │
+│   ├── styles/
+│   │   └── abstracts/
+│   │       ├── _variables.scss
+│   │       └── _mixins.scss
+│   │
+│   └── types/
+│       └── index.ts
+│
+├── .env.local
+├── package.json
+├── next.config.ts
+└── tsconfig.json
